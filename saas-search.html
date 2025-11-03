@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaaS Search UI</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      padding: 40px;
+      color: #111827;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 12px 16px;
+      width: fit-content;
+      border: 1px solid #e5e7eb;
+      margin-bottom: 30px;
+    }
+
+    .search-box {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 8px 12px;
+      width: 250px;
+    }
+
+    .search-box input {
+      border: none;
+      outline: none;
+      font-size: 14px;
+      margin-left: 8px;
+      width: 100%;
+      color: #111827;
+    }
+
+    .search-box input::placeholder {
+      color: #9ca3af;
+    }
+
+    .search-box svg {
+      width: 16px;
+      height: 16px;
+      stroke: #6b7280;
+    }
+
+    select {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 14px;
+      background-color: #ffffff;
+      color: #111827;
+      cursor: pointer;
+    }
+
+    button {
+      background-color: #2563EB;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* --- Cards layout (horizontal) --- */
+    .results {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px;
+      width: 250px;
+      flex-shrink: 0;
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #6b7280;
+      margin: 0 0 12px;
+    }
+
+    .status {
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 6px;
+      padding: 4px 8px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .status.active {
+      background-color: #dcfce7;
+      color: #15803d;
+    }
+
+    .status.paused {
+      background-color: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .status.pending {
+      background-color: #fef9c3;
+      color: #854d0e;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <div class="search-box">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1010.5 18.5a7.5 7.5 0 006.15-3.85z" />
+      </svg>
+      <input type="text" placeholder="Search by name..." />
+    </div>
+
+    <select>
+      <option>All Status</option>
+      <option>Active</option>
+      <option>Paused</option>
+      <option>Pending</option>
+    </select>
+
+    <button>Clear</button>
+  </div>
+
+  <!-- Results Section -->
+  <div class="results">
+    <div class="card">
+      <h3>Lagos Labs</h3>
+      <p>Cloud-based analytics startup</p>
+      <span class="status active">Active</span>
+    </div>
+
+    <div class="card">
+      <h3>Yuku Yani</h3>
+      <p>AI-powered data insights</p>
+      <span class="status paused">Paused</span>
+    </div>
+
+    <div class="card">
+      <h3>Qliq Systems</h3>
+      <p>Enterprise communication tool</p>
+      <span class="status pending">Pending</span>
+    </div>
+
+    <div class="card">
+      <h3>Nova Hub</h3>
+      <p>Project management SaaS</p>
+      <span class="status active">Active</span>
+    </div>
+  </div>
+
+</body>
+</html>
